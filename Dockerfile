@@ -26,4 +26,4 @@ RUN chmod +x /usr/local/bin/pocketbase
 EXPOSE 8090
 
 # Start Pocketbase
-CMD ["/usr/local/bin/pocketbase", "serve" , "--http", "$ENV_PORT:8090"]
+CMD ["/usr/local/bin/pocketbase", "serve" , "--http", "0.0.0.0:8090"]
