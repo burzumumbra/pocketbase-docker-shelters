@@ -4,6 +4,8 @@
 FROM alpine:3.6
 
 ARG POCKETBASE_VERSION=0.2.8
+ARG PORT
+ENV ENV_PORT=$PORT
 
 # Install the dependencies
 RUN apk add --no-cache \
@@ -24,4 +26,4 @@ RUN chmod +x /usr/local/bin/pocketbase
 EXPOSE 8090
 
 # Start Pocketbase
-CMD [ "/usr/local/bin/pocketbase", "serve" ]
+CMD ["/usr/local/bin/pocketbase", "serve" , "--http", "$ENV_PORT:8090"]
