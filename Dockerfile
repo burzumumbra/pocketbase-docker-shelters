@@ -18,6 +18,8 @@ ADD https://github.com/pocketbase/pocketbase/releases/download/v${POCKETBASE_VER
 RUN unzip /tmp/pocketbase.zip -d /usr/local/bin/
 RUN chmod +x /usr/local/bin/pocketbase
 
+WORKDIR /pb_data
+VOLUME /pb_data
 
 
 # Notify Docker that the container wants to expose a port.
